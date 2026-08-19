@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "package": "xhumanoid-vla-r7-public-20260819",
+  "default_model_root": "/models",
+  "profiles": {
+    "r7": {
+      "description": "Shared RGB-D task-conditioned ACT R7 checkpoint.",
+      "runner": "runner_r7.py",
+      "checkpoint": "r7/policy_last.ckpt",
+      "dataset_stats": "r7/dataset_stats.pkl",
+      "checkpoint_sha256": "6dff133b80103979fcaaeb58f985924945e25d3f638ea81e84217b72d357d27c",
+      "dataset_stats_sha256": "876c5370c877ba52308d832424867e27707da2e4fc5a2ca0985d144213e772a4",
+      "policy": "multitask_act",
+      "tasks": [
+        "ind_task_01",
+        "ind_task_02",
+        "ind_task_03",
+        "lab_task_01",
+        "lab_task_03"
+      ],
+      "default_extra_args": [
+        "--prewarm-steps",
+        "5"
+      ]
+    }
+  }
+}

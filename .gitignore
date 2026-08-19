@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv*/
+env/
+venv/
+data/
+VLA-Challenge-Dataset/
+*.h5
+*.hdf5
+logs/
+reports/raw/
+submission/artifacts/

@@ -1,0 +1,10 @@
+models/
+artifacts/
+SHA256SUMS
+BUILD_INFO.json
+*.tar
+*.tar.gz
+*.tgz
+*.log
+__pycache__/
+*.pyc

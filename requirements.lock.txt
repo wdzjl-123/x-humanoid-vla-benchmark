@@ -1,0 +1,32 @@
+# ACT 训练/推理环境 —— 锁定版本（与出题方本机逐一对齐）
+# 环境：Python 3.10.19 | RTX 4090 | 驱动 580.159.03（>=525 即可）
+# 训练与推理均不需要 Isaac Sim。
+#
+# ── 安装步骤 ────────────────────────────────────────────────
+# 1) 先单独装 PyTorch（必须带 CUDA index-url，不能用默认 PyPI）：
+#      pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu128
+#    驱动 535 也能跑 cu128（CUDA 12.x 次版本前向兼容）。
+#    若 cu128 在 535 上报驱动错，改用 cu121（同 2.10.0，权重通用）：
+#      pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu121
+# 2) 再装其余依赖：
+#      pip install -r requirements.lock.txt
+# ────────────────────────────────────────────────────────────
+
+# --- 深度学习框架（版本在此仅作记录，实际用上面的 index-url 命令安装）---
+# torch==2.10.0
+# torchvision==0.25.0
+
+# --- 训练 / 推理运行时依赖 ---
+numpy==2.2.6
+ipython==8.39.0          # detr/models/transformer.py 顶层 import（构建模型必需）
+packaging==25.0          # detr/util/misc.py 顶层 import
+opencv-python-headless==4.13.0.92
+h5py==3.16.0
+pyzmq==27.1.0
+einops==0.8.2
+pillow==12.1.1
+matplotlib==3.10.8
+tqdm==4.67.1
+loguru==0.7.3
+psutil==7.2.2
+tomli==2.2.1
